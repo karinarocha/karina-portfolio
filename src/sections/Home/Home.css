@@ -1,6 +1,9 @@
 .home {
   min-height: 100vh;
 
+  position: relative;
+  overflow: hidden;
+
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   align-items: center;
@@ -19,10 +22,38 @@
 
 
 /* =========================
+   LEFT DECORATIVE BLOB
+========================= */
+
+.home__left-blob {
+  position: absolute;
+
+  left: -22px;
+  top: 13%;
+
+  width: 85px;
+  height: 52%;
+
+  z-index: 0;
+
+  color: var(--color-primary);
+
+  pointer-events: none;
+}
+
+.home__left-blob path {
+  fill: currentColor;
+}
+
+
+/* =========================
    CONTENT
 ========================= */
 
 .home__content {
+  position: relative;
+  z-index: 2;
+
   max-width: 650px;
 }
 
@@ -93,13 +124,14 @@
 
 
 /* =========================
-   VISUAL
+   RIGHT VISUAL
 ========================= */
 
 .home__visual {
   min-height: 600px;
 
   position: relative;
+  z-index: 2;
 
   display: flex;
   align-items: center;
@@ -115,7 +147,7 @@
   position: relative;
 
   width: 100%;
-  max-width: 650px;
+  max-width: 680px;
   height: 500px;
 
   margin-left: auto;
@@ -124,7 +156,7 @@
 }
 
 
-/* Pink background shape */
+/* Main pink shape */
 
 .home__blob {
   position: absolute;
@@ -134,14 +166,14 @@
   background: var(--color-primary);
 
   border-radius:
-    45% 55% 38% 62%
-    / 52% 40% 60% 48%;
+    46% 54% 34% 66%
+    / 32% 39% 61% 68%;
 
   overflow: hidden;
 }
 
 
-/* Both copies of the character */
+/* Same positioning for both images */
 
 .home__character {
   position: absolute;
@@ -156,19 +188,19 @@
 }
 
 
-/* Character body stays inside the pink shape */
+/* Character clipped by the pink shape */
 
 .home__character--inside {
   z-index: 2;
 }
 
 
-/* Head/hair can pop outside the pink shape */
+/* Upper part appears outside the shape */
 
 .home__character--popout {
   z-index: 3;
 
-  clip-path: inset(0 0 58% 0);
+  clip-path: inset(0 0 38% 0);
 
   pointer-events: none;
 }
@@ -181,14 +213,14 @@
 .home__dream {
   position: absolute;
 
-  top: 28%;
-  left: 15%;
+  top: 31%;
+  left: 3%;
 
   z-index: 4;
 
   margin: 0;
 
-  color: var(--color-background-light);
+  color: var(--color-background-dark);
 
   font-family: cursive;
   font-size: 1.15rem;
@@ -197,8 +229,9 @@
   transform: rotate(-8deg);
 }
 
+
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
 @media (max-width: 900px) {
@@ -208,6 +241,10 @@
     text-align: center;
 
     padding-top: 9rem;
+  }
+
+  .home__left-blob {
+    display: none;
   }
 
   .home__content {
@@ -234,8 +271,12 @@
   .home__dream {
     left: 5%;
   }
-
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
   .home {

@@ -4,6 +4,29 @@ import karinaHome from "../../assets/images/karina-home.png";
 function Home() {
   return (
     <section className="home" id="home">
+      {/* Decorative pink shape on the left */}
+      <svg
+        className="home__left-blob"
+        viewBox="0 0 180 600"
+        aria-hidden="true"
+      >
+        <path
+          d="
+            M0 0
+            H42
+            C118 28 160 78 132 126
+            C108 165 72 177 70 215
+            C68 250 96 276 82 311
+            C69 343 45 356 60 392
+            C74 427 114 443 115 486
+            C116 530 78 572 43 600
+            H0
+            Z
+          "
+        />
+      </svg>
+
+      {/* Left content */}
       <div className="home__content">
         <p className="home__greeting">Hey, I am</p>
 
@@ -27,12 +50,14 @@ function Home() {
           href="/cv/karina-rocha-cv.pdf"
           download
         >
-           Download CV
+          ↓ Download CV
         </a>
       </div>
 
+      {/* Right visual */}
       <div className="home__visual">
         <div className="home__portrait">
+          {/* Character clipped inside the pink shape */}
           <div className="home__blob">
             <img
               className="home__character home__character--inside"
@@ -41,6 +66,7 @@ function Home() {
             />
           </div>
 
+          {/* Same image used for the pop-out effect */}
           <img
             className="home__character home__character--popout"
             src={karinaHome}
