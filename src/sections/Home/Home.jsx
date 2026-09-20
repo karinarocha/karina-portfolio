@@ -2,16 +2,16 @@ import "./Home.css";
 import karinaHome from "../../assets/images/karina-home.png";
 
 function Home() {
-  return (
-    <section className="home" id="home">
-      {/* Decorative pink shape on the left */}
-      <svg
-        className="home__left-blob"
-        viewBox="0 0 180 600"
-        aria-hidden="true"
-      >
-        <path
-          d="
+    return (
+        <section className="home" id="home">
+            {/* Decorative pink shape on the left */}
+            <svg
+                className="home__left-blob"
+                viewBox="0 0 180 600"
+                aria-hidden="true"
+            >
+                <path
+                    d="
             M0 0
             H42
             C118 28 160 78 132 126
@@ -23,67 +23,92 @@ function Home() {
             H0
             Z
           "
-        />
-      </svg>
+                />
+            </svg>
 
-      {/* Left content */}
-      <div className="home__content">
-        <p className="home__greeting">Hey, I am</p>
+            {/* Left content */}
+            <div className="home__content">
+                <p className="home__greeting">Hey, I am</p>
 
-        <h1 className="home__name">
-          KARINA <span>ROCHA</span>
-        </h1>
+                <h1 className="home__name">
+                    KARINA <span>ROCHA</span>
+                </h1>
 
-        <h2 className="home__role">
-          SOFTWARE TEST ENGINEER
-        </h2>
+                <h2 className="home__role">
+                    SOFTWARE TEST ENGINEER
+                </h2>
 
-        <p className="home__description">
-          Quality-driven Software Test Engineer with experience in
-          software testing and automation. I enjoy finding issues,
-          improving processes and building reliable solutions while
-          continuously expanding my skills in test automation.
-        </p>
+                <p className="home__description">
+                    Quality-driven Software Test Engineer with experience in
+                    software testing and automation. I enjoy finding issues,
+                    improving processes and building reliable solutions while
+                    continuously expanding my skills in test automation.
+                </p>
 
-        <a
-          className="home__cv-button"
-          href="/cv/karina-rocha-cv.pdf"
-          download
-        >
-          ↓ Download CV
-        </a>
-      </div>
+                <a
+                    className="home__cv-button"
+                    href="/cv/karina-rocha-cv.pdf"
+                    download
+                >
+                    ↓ Download CV
+                </a>
+            </div>
 
-      {/* Right visual */}
-      <div className="home__visual">
-        <div className="home__portrait">
-          {/* Character clipped inside the pink shape */}
-          <div className="home__blob">
-            <img
-              className="home__character home__character--inside"
-              src={karinaHome}
-              alt="Illustration of Karina Rocha"
-            />
-          </div>
+            {/* Right visual */}
+            <div className="home__visual">
+                <div className="home__portrait">
+                    {/* Character clipped inside the pink shape */}
+                    <div className="home__blob">
+                        <img
+                            className="home__character home__character--inside"
+                            src={karinaHome}
+                            alt="Illustration of Karina Rocha"
+                        />
+                    </div>
 
-          {/* Same image used for the pop-out effect */}
-          <img
-            className="home__character home__character--popout"
-            src={karinaHome}
-            alt=""
-            aria-hidden="true"
-          />
-        </div>
+                    {/* Same image used for the pop-out effect */}
+                    <img
+                        className="home__character home__character--popout"
+                        src={karinaHome}
+                        alt=""
+                        aria-hidden="true"
+                    />
+                </div>
 
-        <p className="home__dream">
-          Same girl...
-          <br />
-          bigger dreams ♡
-        </p>
+                <p className="home__dream">
+                    Same girl...
+                    <br />
+                    bigger dreams ♡
+                </p>
 
-      </div>
-    </section>
-  );
+            </div>
+            <div className="home__footer">
+                <p className="home__footer-message">
+                    Turning bugs into better experiences ♡
+                </p>
+
+                <a className="home__scroll" href="#about">
+                    <span className="home__scroll-arrow">↓</span>
+
+                    <span>
+                        SCROLL DOWN
+                        <br />
+                        TO EXPLORE
+                    </span>
+                </a>
+
+                <p className="home__footer-note">
+                    Let's build
+                    <br />
+                    something great
+                    <br />
+                    together! ♡
+                </p>
+            </div>
+
+
+        </section>
+    );
 }
 
 export default Home;
