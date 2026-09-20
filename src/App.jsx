@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import Home from "./sections/Home/Home";
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       <Header />
 
       <main>
-        {/* Sections will be added here */}
+        <Home />
       </main>
     </>
   );
