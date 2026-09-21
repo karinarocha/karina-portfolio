@@ -45,7 +45,7 @@ function Home() {
 
                 <a
                     className="home__cv-button"
-                    href="/cv/karina-rocha-cv.pdf"
+                    href="/cv/karina-rocha-cv-public.pdf"
                     download
                 >
                     <Icon
