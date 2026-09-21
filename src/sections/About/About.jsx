@@ -2,11 +2,11 @@ import "./About.css";
 import experiences from "../../data/experiences";
 
 import {
-    MapPinned,
-    Headset,
-    Code2,
-    ShieldCheck,
-    Compass,
+  MapPinned,
+  Headset,
+  Code2,
+  ShieldCheck,
+  Compass,
 } from "lucide-react";
 
 import geoprocessingImage from "../../assets/images/about/exploration/geoprocessing.png";
@@ -19,147 +19,154 @@ import qaLvl2Image from "../../assets/images/about/progression/qa-lvl2-mage.png"
 import qaCurrentImage from "../../assets/images/about/progression/qa-current.png";
 
 const explorationImages = [
-    geoprocessingImage,
-    supportImage,
-    frontendImage,
+  geoprocessingImage,
+  supportImage,
+  frontendImage,
 ];
 
 const explorationIcons = [
-    MapPinned,
-    Headset,
-    Code2,
+  MapPinned,
+  Headset,
+  Code2,
 ];
 
 function About() {
-    return (
-        <section className="about" id="about">
-            {/* ==================================================
+  return (
+    <section className="about" id="about">
+      {/* ==================================================
           STORY + EXPLORATION
       ================================================== */}
 
-            <div className="about__story-layout">
-                {/* =========================
+      <div className="about__story-layout">
+        {/* =========================
             LEFT EDITORIAL COLUMN
         ========================== */}
 
-                <aside className="about__story">
-                    <span className="about__eyebrow">
-                        MY JOURNEY
-                    </span>
+        <aside className="about__story">
+          <span className="about__eyebrow">
+            MY JOURNEY
+          </span>
 
-                    <h2 className="about__title">
-                        DIFFERENT PATHS.
-                        <br />
-                        <span>SAME PURPOSE.</span>
-                    </h2>
+          <h2 className="about__title">
+            DIFFERENT PATHS.
+            <br />
+            <span>SAME PURPOSE.</span>
+          </h2>
 
-                    <p className="about__intro">
-                        My career started through different areas of
-                        technology. Each experience gave me a different
-                        perspective, new skills and a clearer understanding
-                        of the kind of problems I enjoy solving.
-                    </p>
+          <p className="about__intro">
+            My career started through different areas of
+            technology. Each experience gave me a different
+            perspective, new skills and a clearer understanding
+            of the kind of problems I enjoy solving.
+          </p>
 
-                    <div className="about__story-divider"></div>
+          <div className="about__story-divider"></div>
 
-                    <p className="about__story-note">
-                        “Every experience
-                        <br />
-                        adds to the story.” ♡
-                    </p>
-                </aside>
+          <p className="about__story-note">
+            “Every experience
+            <br />
+            adds to the story.” ♡
+          </p>
+        </aside>
 
-                {/* =========================
+        {/* =========================
             RIGHT SIDE
         ========================== */}
 
-                <div className="about__exploration">
-                    <div className="about__exploration-title">
-                        <div className="about__exploration-heading">
-                            <Compass size={17} strokeWidth={2.2} />
-                            <span>EXPLORATION PHASE</span>
-                        </div>
+        <div className="about__exploration">
+          <div className="about__exploration-title">
+            <div className="about__exploration-heading">
+              <Compass size={17} strokeWidth={2.2} />
 
-                        <p>
-                            Three paths. Different skills. One evolving career.
-                        </p>
-                    </div>
+              <span>
+                EXPLORATION PHASE
+              </span>
+            </div>
 
-                    {/* =========================
+            <p>
+              Three paths. Different skills. One evolving career.
+            </p>
+          </div>
+
+          {/* =========================
               EXPLORATION CARDS
           ========================== */}
 
-                    <div className="about__paths">
-                        {experiences.map((experience, index) => {
-                            const Icon = explorationIcons[index] ?? Code2;
+          <div className="about__paths">
+            {experiences.map((experience, index) => {
+              const Icon =
+                explorationIcons[index] ?? Code2;
 
-                            return (
-                                <article
-                                    className="about__path-card"
-                                    key={experience.id}
-                                >
-                                    <div className="about__path-number">
-                                        0{index + 1}
-                                    </div>
+              return (
+                <article
+                  className="about__path-card"
+                  key={experience.id}
+                >
+                  <div className="about__path-number">
+                    0{index + 1}
+                  </div>
 
-                                    <div className="about__character">
-                                        <img
-                                            src={explorationImages[index]}
-                                            alt={`Illustration for ${experience.title}`}
-                                        />
-                                    </div>
+                  <div className="about__character">
+                    <img
+                      src={explorationImages[index]}
+                      alt={`Illustration for ${experience.title}`}
+                    />
+                  </div>
 
-                                    <div
-                                        className={`about__path-heading about__path-heading--${index + 1
-                                            }`}
-                                    >
-                                        <div className="about__path-icon">
-                                            <Icon
-                                                size={16}
-                                                strokeWidth={2.2}
-                                            />
-                                        </div>
-
-                                        <h3>{experience.title}</h3>
-                                    </div>
-
-                                    <p className="about__company">
-                                        {experience.company}
-                                    </p>
-
-                                    <p className="about__period">
-                                        {experience.period}
-                                    </p>
-
-                                    <ul>
-                                        {experience.skills.map((skill) => (
-                                            <li key={skill}>
-                                                {skill}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </article>
-                            );
-                        })}
+                  <div
+                    className={`about__path-heading about__path-heading--${
+                      index + 1
+                    }`}
+                  >
+                    <div className="about__path-icon">
+                      <Icon
+                        size={16}
+                        strokeWidth={2.2}
+                      />
                     </div>
 
-                    {/* =========================
+                    <h3>
+                      {experience.title}
+                    </h3>
+                  </div>
+
+                  <p className="about__company">
+                    {experience.company}
+                  </p>
+
+                  <p className="about__period">
+                    {experience.period}
+                  </p>
+
+                  <ul>
+                    {experience.skills.map((skill) => (
+                      <li key={skill}>
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              );
+            })}
+          </div>
+
+          {/* =========================
               PATH CONNECTORS
           ========================== */}
 
-                    <div
-                        className="about__paths-connector"
-                        aria-hidden="true"
-                    >
-                        <svg
-                            viewBox="0 0 900 125"
-                            preserveAspectRatio="none"
-                        >
-                            {/* GEO */}
+          <div
+            className="about__paths-connector"
+            aria-hidden="true"
+          >
+            <svg
+              viewBox="0 0 900 125"
+              preserveAspectRatio="none"
+            >
+              {/* GEO */}
 
-                            <path
-                                className="about__connector-path about__connector-path--geo"
-                                d="
+              <path
+                className="about__connector-path about__connector-path--geo"
+                d="
                   M150 4
                   C150 35,
                   205 40,
@@ -168,13 +175,13 @@ function About() {
                   280 100,
                   330 121
                 "
-                            />
+              />
 
-                            {/* SUPPORT */}
+              {/* SUPPORT */}
 
-                            <path
-                                className="about__connector-path about__connector-path--support"
-                                d="
+              <path
+                className="about__connector-path about__connector-path--support"
+                d="
                   M450 4
                   C450 32,
                   468 42,
@@ -183,13 +190,13 @@ function About() {
                   443 98,
                   450 121
                 "
-                            />
+              />
 
-                            {/* FRONT-END */}
+              {/* FRONT-END */}
 
-                            <path
-                                className="about__connector-path about__connector-path--frontend"
-                                d="
+              <path
+                className="about__connector-path about__connector-path--frontend"
+                d="
                   M750 4
                   C750 35,
                   695 40,
@@ -198,236 +205,244 @@ function About() {
                   620 100,
                   570 121
                 "
-                            />
+              />
 
-                            {/* DIAMONDS */}
+              {/* DIAMONDS */}
 
-                            <rect
-                                className="about__connector-dot about__connector-dot--geo"
-                                x="146"
-                                y="0"
-                                width="8"
-                                height="8"
-                                rx="2"
-                                transform="rotate(45 150 4)"
-                            />
+              <rect
+                className="about__connector-dot about__connector-dot--geo"
+                x="146"
+                y="0"
+                width="8"
+                height="8"
+                rx="2"
+                transform="rotate(45 150 4)"
+              />
 
-                            <rect
-                                className="about__connector-dot about__connector-dot--support"
-                                x="446"
-                                y="0"
-                                width="8"
-                                height="8"
-                                rx="2"
-                                transform="rotate(45 450 4)"
-                            />
+              <rect
+                className="about__connector-dot about__connector-dot--support"
+                x="446"
+                y="0"
+                width="8"
+                height="8"
+                rx="2"
+                transform="rotate(45 450 4)"
+              />
 
-                            <rect
-                                className="about__connector-dot about__connector-dot--frontend"
-                                x="746"
-                                y="0"
-                                width="8"
-                                height="8"
-                                rx="2"
-                                transform="rotate(45 750 4)"
-                            />
-                        </svg>
-                    </div>
+              <rect
+                className="about__connector-dot about__connector-dot--frontend"
+                x="746"
+                y="0"
+                width="8"
+                height="8"
+                rx="2"
+                transform="rotate(45 750 4)"
+              />
+            </svg>
+          </div>
 
-                    {/* =========================
+          {/* =========================
               THE PATH I CHOSE
           ========================== */}
 
-                    <div className="about__class-selected">
-                        <span className="about__class-label">
-                            THE PATH I CHOSE
-                        </span>
+          <div className="about__class-selected">
+            <span className="about__class-label">
+              THE PATH I CHOSE
+            </span>
 
-                        <div className="about__class-image">
-                            <img
-                                src={qaPathImage}
-                                alt="Karina as a QA investigator mage"
-                            />
-                        </div>
-
-                        <div className="about__class-content">
-                            <div className="about__class-heading">
-                                <div className="about__class-icon">
-                                    <ShieldCheck
-                                        size={21}
-                                        strokeWidth={2.2}
-                                    />
-                                </div>
-
-                                <h3>
-                                    SOFTWARE TESTING / QA
-                                </h3>
-                            </div>
-
-                            <p>
-                                Where analytical thinking, curiosity and
-                                problem-solving finally came together.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div className="about__class-image">
+              <img
+                src={qaPathImage}
+                alt="Karina as a QA investigator mage"
+              />
             </div>
 
-            {/* ==================================================
+            <div className="about__class-content">
+              <div className="about__class-heading">
+                <div className="about__class-icon">
+                  <ShieldCheck
+                    size={21}
+                    strokeWidth={2.2}
+                  />
+                </div>
+
+                <h3>
+                  SOFTWARE TESTING / QA
+                </h3>
+              </div>
+
+              <p>
+                Where analytical thinking, curiosity and
+                problem-solving finally came together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ==================================================
           TRANSITION
       ================================================== */}
 
-            <div
-                className="about__quest-transition"
-                aria-hidden="true"
-            >
-                <span></span>
-            </div>
+      <div
+        className="about__quest-transition"
+        aria-hidden="true"
+      >
+        <span></span>
+      </div>
 
-            {/* ==================================================
+      {/* ==================================================
           LEVELING UP
       ================================================== */}
 
-            <div className="about__progression">
-                <div className="about__progression-header">
-                    <span>MAIN QUEST</span>
+      <div className="about__progression">
+        <div className="about__progression-header">
+          <span>
+            MAIN QUEST
+          </span>
 
-                    <h3>
-                        LEVELING UP
-                    </h3>
+          <h3>
+            LEVELING UP
+          </h3>
 
-                    <p>
-                        Same path. New challenges. Higher goals.
-                    </p>
-                </div>
+          <p>
+            Same path. New challenges. Higher goals.
+          </p>
+        </div>
 
-                <div className="about__progression-track">
-                    {/* =========================
+        <div className="about__progression-track">
+          {/* =========================
               LVL 1
           ========================== */}
 
-                    <article className="about__level about__level--1">
-                        <span
-                            className="about__level-node"
-                            aria-hidden="true"
-                        ></span>
+          <article className="about__level about__level--1">
+            <span
+              className="about__level-node"
+              aria-hidden="true"
+            ></span>
 
-                        <div className="about__level-character">
-                            <img
-                                src={qaLvl1Image}
-                                alt="Karina QA level 1"
-                            />
-                        </div>
+            <div className="about__level-character">
+              <img
+                src={qaLvl1Image}
+                alt="Karina QA level 1"
+              />
+            </div>
 
-                        <div className="about__level-content">
-                            <div className="about__level-top">
-                                <span className="about__level-badge">
-                                    LVL 1
-                                </span>
+            <div className="about__level-content">
+              <div className="about__level-top">
+                <span className="about__level-badge">
+                  LVL 1
+                </span>
 
-                                <span className="about__level-company">
-                                    SIDIA · 2021
-                                </span>
-                            </div>
+                <span className="about__level-company">
+                  SIDIA · JAN 2021 — DEC 2021
+                </span>
+              </div>
 
-                            <h4>
-                                SOFTWARE TESTING / QA
-                            </h4>
+              <h4>
+                TECHNICIAN TEST DEVELOPER
+              </h4>
 
-                            <p>
-                                Manual testing, Android validation,
-                                defect analysis and quality assurance.
-                            </p>
-                        </div>
-                    </article>
+              <p className="about__level-description">
+                Started my journey in software quality, working
+                with Android validation, manual testing, test
+                execution and defect investigation.
+              </p>
+            </div>
+          </article>
 
-                    {/* =========================
+          {/* =========================
               LVL 2
           ========================== */}
 
-                    <article className="about__level about__level--2">
-                        <span
-                            className="about__level-node"
-                            aria-hidden="true"
-                        ></span>
+          <article className="about__level about__level--2">
+            <span
+              className="about__level-node"
+              aria-hidden="true"
+            ></span>
 
-                        <div className="about__level-character">
-                            <img
-                                src={qaLvl2Image}
-                                alt="Karina QA level 2 with automation and AI"
-                            />
-                        </div>
+            <div className="about__level-character">
+              <img
+                src={qaLvl2Image}
+                alt="Karina QA level 2"
+              />
+            </div>
 
-                        <div className="about__level-content">
-                            <div className="about__level-top">
-                                <span className="about__level-badge">
-                                    LVL 2
-                                </span>
+            <div className="about__level-content">
+              <div className="about__level-top">
+                <span className="about__level-badge">
+                  LVL 2
+                </span>
 
-                                <span className="about__level-company">
-                                    SIDIA · CURRENT
-                                </span>
-                            </div>
+                <span className="about__level-company">
+                  SIDIA · DEC 2021 — JUN 2024
+                </span>
+              </div>
 
-                            <h4>
-                                SOFTWARE TEST ENGINEER
-                            </h4>
+              <h4>
+                JR SOFTWARE TEST ENGINEER
+              </h4>
 
-                            <p>
-                                Test automation, APIs, CI/CD,
-                                process improvement and increasingly
-                                scalable quality solutions.
-                            </p>
-                        </div>
-                    </article>
+              <p className="about__level-description">
+                Expanded my experience in software testing,
+                Android quality, defect analysis and test
+                processes, while taking on more complex
+                responsibilities.
+              </p>
+            </div>
+          </article>
 
-                    {/* =========================
-              CURRENT QUEST
+          {/* =========================
+              LVL 3 · CURRENT
           ========================== */}
 
-                    <article className="about__level about__level--current">
-                        <span
-                            className="about__level-node"
-                            aria-hidden="true"
-                        ></span>
+          <article className="about__level about__level--current">
+            <span
+              className="about__level-node"
+              aria-hidden="true"
+            ></span>
 
-                        <div className="about__level-character">
-                            <img
-                                src={qaCurrentImage}
-                                alt="Karina current SDET quest"
-                            />
-                        </div>
-
-                        <div className="about__level-content">
-                            <div className="about__level-top">
-                                <span className="about__level-badge">
-                                    CURRENT
-                                </span>
-
-                                <span className="about__level-company">
-                                    CURRENT QUEST
-                                </span>
-                            </div>
-
-                            <h4>
-                                SDET SPECIALIZATION
-                            </h4>
-
-                            <p>
-                                Deepening automation with Python,
-                                Playwright and software engineering
-                                practices for testing.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-
-                <p className="about__next-level">
-                    Next level... loading ♡
-                </p>
+            <div className="about__level-character">
+              <img
+                src={qaCurrentImage}
+                alt="Karina QA level 3"
+              />
             </div>
-        </section>
-    );
+
+            <div className="about__level-content">
+              <div className="about__level-top">
+                <span className="about__level-badge">
+                  LVL 3 · CURRENT
+                </span>
+
+                <span className="about__level-company">
+                  SIDIA · JUN 2024 — PRESENT
+                </span>
+              </div>
+
+              <h4>
+                MID-LEVEL SOFTWARE TEST ENGINEER
+              </h4>
+
+              <p className="about__level-description">
+                Taking on more complex Android testing challenges
+                while finding better ways to organize processes,
+                optimize workflows and anticipate problems.
+                <br />
+                <br />
+                Along the way, I'm leveling up with Python, APIs
+                and Playwright as I grow toward SDET.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p className="about__next-level">
+          Next level... loading ♡
+        </p>
+      </div>
+    </section>
+  );
 }
 
 export default About;

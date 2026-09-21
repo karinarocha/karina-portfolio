@@ -30,6 +30,22 @@ const skillGroups = [
         icon: "logos:react",
       },
       {
+        name: "Angular",
+        icon: "logos:angular-icon",
+      },
+      {
+        name: "Node.js",
+        icon: "logos:nodejs-icon",
+      },
+      {
+        name: "TypeScript",
+        icon: "logos:typescript-icon",
+      },
+      {
+        name: "HTML",
+        icon: "logos:html-5",
+      },
+      {
         name: "CSS",
         icon: "logos:css-3",
       },
@@ -40,7 +56,7 @@ const skillGroups = [
     title: "Testing & Automation",
     skills: [
       {
-        name: "Android Testing",
+        name: "Android",
         icon: "logos:android-icon",
       },
       {
@@ -51,6 +67,10 @@ const skillGroups = [
       {
         name: "Playwright",
         icon: "devicon:playwright",
+      },
+      {
+        name: "Cypress",
+        icon: "skill-icons:cypress-light",
       },
     ],
   },
@@ -75,15 +95,11 @@ const skillGroups = [
         name: "Docker",
         icon: "logos:docker-icon",
       },
-      {
-        name: "Azure DevOps",
-        icon: "devicon:azuredevops",
-      },
     ],
   },
 
   {
-    title: "QA & Issue Management",
+    title: "Management Tools & Agile Practices",
     skills: [
       {
         name: "Jira",
@@ -94,12 +110,6 @@ const skillGroups = [
         icon: "mdi:bug-outline",
         color: "#65c466",
       },
-    ],
-  },
-
-  {
-    title: "Agile Practices",
-    skills: [
       {
         name: "Scrum",
         icon: "mdi:account-group-outline",
@@ -168,28 +178,102 @@ function Skills() {
     <section className="skills" id="skills">
       <div className="skills__layout">
         {/* =========================
-            INTRO
+            LEFT COLUMN
         ========================== */}
 
-        <aside className="skills__intro">
-          <span className="skills__eyebrow">
-            SKILLS & TOOLS
-          </span>
+        <div className="skills__left">
+          <div className="skills__intro">
+            <span className="skills__eyebrow">
+              SKILLS & TOOLS
+            </span>
 
-          <h2 className="skills__title">
-            TOOLS I USE.
-            <br />
-            <span>THINGS I LOVE.</span>
-          </h2>
+            <h2 className="skills__title">
+              TOOLS I USE.
+              <br />
+              <span>THINGS I LOVE.</span>
+            </h2>
 
-          <p className="skills__description">
-            A combination of technical knowledge,
-            curiosity and people skills helps me build
-            better solutions and work effectively in
-            great teams.
-          </p>
+            <p className="skills__description">
+              A combination of technical knowledge,
+              curiosity and people skills helps me build
+              better solutions and work effectively in
+              great teams.
+            </p>
 
-          <div className="skills__divider"></div>
+            <div className="skills__divider"></div>
+          </div>
+
+          {/* =========================
+              SOFT SKILLS
+          ========================== */}
+
+          <div className="skills__soft">
+            <div className="skills__section-title">
+              <div className="skills__section-symbol">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <h3>Soft Skills</h3>
+            </div>
+
+            <div className="skills__soft-map">
+              {/* Character */}
+
+              <div className="skills__soft-character">
+                <img
+                  src={karinaSkills}
+                  alt="Illustration of Karina holding a plush shark"
+                />
+
+                <div className="skills__heart skills__heart--one">
+                  ♥
+                </div>
+
+                <div className="skills__heart skills__heart--two">
+                  ♥
+                </div>
+              </div>
+
+              {/* Orbit */}
+
+              <div className="skills__orbit-track">
+                {softSkills.map((skill, index) => {
+                  const SoftSkillIcon = skill.icon;
+
+                  const delay =
+                    -(
+                      index *
+                      (ORBIT_DURATION / softSkills.length)
+                    );
+
+                  return (
+                    <div
+                      className="skills__orbit-node"
+                      key={skill.name}
+                      style={{
+                        "--orbit-delay": `${delay}s`,
+                      }}
+                    >
+                      <div className="skills__orbit-card">
+                        <div className="skills__soft-card">
+                          <div className="skills__soft-icon">
+                            <SoftSkillIcon
+                              size={16}
+                              strokeWidth={2}
+                            />
+                          </div>
+
+                          <span>{skill.name}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
 
           <p className="skills__quote">
             “Different skills.
@@ -198,14 +282,14 @@ function Skills() {
             <br />
             continuous growth.” ♡
           </p>
-        </aside>
+        </div>
 
         {/* =========================
             TECHNICAL SKILLS
         ========================== */}
 
         <div className="skills__technical">
-          <div className="skills__section-title">
+          <div className="skills__section-title skills__section-title--technical">
             <div className="skills__section-symbol">
               <span></span>
               <span></span>
@@ -263,84 +347,6 @@ function Skills() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* =========================
-            SOFT SKILLS
-        ========================== */}
-
-        <div className="skills__soft">
-          <div className="skills__section-title">
-            <div className="skills__section-symbol">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <h3>Soft Skills</h3>
-          </div>
-
-          <div className="skills__soft-map">
-            {/* CHARACTER */}
-
-            <div className="skills__soft-character">
-              <img
-                src={karinaSkills}
-                alt="Illustration of Karina holding a plush shark"
-              />
-
-              <div className="skills__heart skills__heart--one">
-                ♥
-              </div>
-
-              <div className="skills__heart skills__heart--two">
-                ♥
-              </div>
-            </div>
-
-            {/* ORBIT */}
-
-            <div className="skills__orbit-track">
-              {softSkills.map((skill, index) => {
-                const SoftSkillIcon = skill.icon;
-
-                const delay =
-                  -(
-                    index *
-                    (ORBIT_DURATION / softSkills.length)
-                  );
-
-                return (
-                  <div
-                    className="skills__orbit-node"
-                    key={skill.name}
-                    style={{
-                      "--orbit-delay": `${delay}s`,
-                    }}
-                  >
-                    <div className="skills__orbit-card">
-                      <div className="skills__soft-card">
-                        <div className="skills__soft-icon">
-                          <SoftSkillIcon
-                            size={17}
-                            strokeWidth={2}
-                          />
-                        </div>
-
-                        <span>{skill.name}</span>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <p className="skills__soft-note">
-            Good skills.
-            <br />
-            brighter possibilities ♡
-          </p>
         </div>
       </div>
     </section>

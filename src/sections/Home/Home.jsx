@@ -1,5 +1,6 @@
 import "./Home.css";
 import karinaHome from "../../assets/images/karina-home.png";
+import { Icon } from "@iconify/react";
 
 function Home() {
     return (
@@ -39,10 +40,7 @@ function Home() {
                 </h2>
 
                 <p className="home__description">
-                    Quality-driven Software Test Engineer with experience in
-                    software testing and automation. I enjoy finding issues,
-                    improving processes and building reliable solutions while
-                    continuously expanding my skills in test automation.
+                    I love technology, learning new things and figuring out how things work. I found my place in software testing, where curiosity turns into investigation, improvement and better experiences — one bug at a time.
                 </p>
 
                 <a
@@ -50,7 +48,13 @@ function Home() {
                     href="/cv/karina-rocha-cv.pdf"
                     download
                 >
-                    ↓ Download CV
+                    <Icon
+                        icon="mdi:download"
+                        width="22"
+                        height="22"
+                    />
+
+                    <span>Download CV</span>
                 </a>
             </div>
 
@@ -74,12 +78,6 @@ function Home() {
                         aria-hidden="true"
                     />
                 </div>
-
-                <p className="home__dream">
-                    Same girl...
-                    <br />
-                    bigger dreams ♡
-                </p>
 
             </div>
             <div className="home__footer">

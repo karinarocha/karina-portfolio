@@ -1,13 +1,11 @@
 .home {
   min-height: 100vh;
-
   position: relative;
   overflow: hidden;
 
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   align-items: center;
-
   gap: 3rem;
 
   padding: 8rem 7% 3rem;
@@ -20,14 +18,12 @@
   );
 }
 
-
 /* =========================
    LEFT DECORATIVE BLOB
 ========================= */
 
 .home__left-blob {
   position: absolute;
-
   left: -22px;
   top: 13%;
 
@@ -45,13 +41,13 @@
   fill: currentColor;
 }
 
-
 /* =========================
    CONTENT
 ========================= */
 
 .home__content {
   position: relative;
+
   z-index: 2;
 
   max-width: 650px;
@@ -68,7 +64,9 @@
   margin: 0;
 
   font-size: clamp(3rem, 4.3vw, 4.5rem);
+
   line-height: 1;
+
   letter-spacing: 0.03rem;
 
   white-space: nowrap;
@@ -96,10 +94,21 @@
   line-height: 1.7;
 }
 
+/* =========================
+   CV BUTTON
+========================= */
+
 .home__cv-button {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.55rem;
 
   margin-top: 1.5rem;
+
   padding: 1rem 1.8rem;
 
   border-radius: var(--radius-large);
@@ -108,6 +117,7 @@
   color: var(--color-background-dark);
 
   font-weight: 600;
+  line-height: 1;
 
   box-shadow: var(--shadow-soft);
 
@@ -122,6 +132,17 @@
   background: var(--color-primary-light);
 }
 
+.home__cv-button svg {
+  display: block;
+
+  flex-shrink: 0;
+}
+
+.home__cv-button span {
+  display: block;
+
+  line-height: 1;
+}
 
 /* =========================
    RIGHT VISUAL
@@ -131,13 +152,13 @@
   min-height: 600px;
 
   position: relative;
+
   z-index: 2;
 
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-
 
 /* =========================
    PORTRAIT
@@ -155,7 +176,6 @@
   overflow: visible;
 }
 
-
 /* Main pink shape */
 
 .home__blob {
@@ -172,7 +192,6 @@
   overflow: hidden;
 }
 
-
 /* Same positioning for both images */
 
 .home__character {
@@ -187,13 +206,11 @@
   object-fit: contain;
 }
 
-
 /* Character clipped by the pink shape */
 
 .home__character--inside {
   z-index: 2;
 }
-
 
 /* Upper part appears outside the shape */
 
@@ -203,30 +220,6 @@
   clip-path: inset(0 0 38% 0);
 
   pointer-events: none;
-}
-
-
-/* =========================
-   DREAM TEXT
-========================= */
-
-.home__dream {
-  position: absolute;
-
-  top: 31%;
-  left: 3%;
-
-  z-index: 4;
-
-  margin: 0;
-
-  color: var(--color-background-dark);
-
-  font-family: cursive;
-  font-size: 1.15rem;
-  line-height: 1.25;
-
-  transform: rotate(-8deg);
 }
 
 /* =========================
@@ -243,7 +236,9 @@
   z-index: 5;
 
   display: grid;
+
   grid-template-columns: 1fr auto 1fr;
+
   align-items: end;
 
   color: var(--color-primary);
@@ -257,6 +252,7 @@
   justify-self: start;
 
   font-size: 0.72rem;
+
   letter-spacing: 0.12rem;
 
   opacity: 0.8;
@@ -265,6 +261,7 @@
 .home__scroll {
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   gap: 0.25rem;
@@ -272,9 +269,11 @@
   color: var(--color-text-muted);
 
   font-size: 0.6rem;
+
   line-height: 1.5;
 
   letter-spacing: 0.15rem;
+
   text-align: center;
 
   pointer-events: auto;
@@ -288,6 +287,7 @@
 
 .home__scroll-arrow {
   font-size: 1.5rem;
+
   line-height: 1;
 }
 
@@ -297,14 +297,15 @@
   justify-self: end;
 
   font-family: cursive;
+
   font-size: 0.95rem;
+
   line-height: 1.2;
 
   text-align: center;
 
   transform: rotate(-7deg);
 }
-
 
 /* =========================
    TABLET
@@ -344,15 +345,10 @@
     margin: 0 auto;
   }
 
-  .home__dream {
-    left: 5%;
-  }
-
   .home__footer {
-  display: none;
+    display: none;
   }
 }
-
 
 /* =========================
    MOBILE
@@ -376,12 +372,7 @@
     height: 115%;
   }
 
-  .home__dream {
+  .home__footer {
     display: none;
   }
-
-  .home__footer {
-  display: none;
-  }
-
 }

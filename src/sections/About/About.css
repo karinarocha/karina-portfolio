@@ -949,6 +949,20 @@
   line-height: 1.6;
 }
 
+.about__level-description {
+  width: 84%;
+  max-width: 390px;
+
+  margin: 1rem auto 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.82rem;
+  line-height: 1.65;
+
+  text-align: left;
+}
+
 /* ==================================================
    LVL 1
 ================================================== */
